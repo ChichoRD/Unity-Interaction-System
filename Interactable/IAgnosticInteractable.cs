@@ -10,8 +10,8 @@ namespace InteractionSystem.Interactable
         IInteractionResponse IResponseOnlyInteractable<IInteractionResponse>.TryInteract() =>
             new InteractionResponse(TryInteract());
 
-        IInteractionResponse IRequestOnlyInteractable<object>.TryInteract(IInteractionRequest<object> interactionRequest) =>
-            new InteractionResponse(TryInteract());
+        bool IRequestOnlyInteractable<object>.TryInteract(IInteractionRequest<object> interactionRequest) =>
+            TryInteract();
 
         new bool TryInteract();
     }

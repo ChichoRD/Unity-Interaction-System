@@ -5,8 +5,8 @@ namespace InteractionSystem.Interactable
     public interface IRequestOnlyInteractable<in TInteractionRequestInfo> : IInteractable<TInteractionRequestInfo, IInteractionResponse>
     {
         IInteractionResponse IInteractable<TInteractionRequestInfo, IInteractionResponse>.TryInteract(IInteractionRequest<TInteractionRequestInfo> interactionRequest) =>
-            TryInteract(interactionRequest);
+            new InteractionResponse(TryInteract(interactionRequest));
 
-        new IInteractionResponse TryInteract(IInteractionRequest<TInteractionRequestInfo> interactionRequestInfo);
+        new bool TryInteract(IInteractionRequest<TInteractionRequestInfo> interactionRequestInfo);
     }
 }
