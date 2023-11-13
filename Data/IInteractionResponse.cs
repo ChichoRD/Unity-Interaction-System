@@ -1,4 +1,7 @@
-﻿public interface IInteractionResponse
+﻿namespace InteractionSystem.Data
 {
-    bool Success { get; }
+    public interface IInteractionResponse
+    {
+        bool Success { get; }
+    }
 }

@@ -1,7 +1,12 @@
+using InteractionSystem.Data;
+using InteractionSystem.Interactable;
 using System.Collections.Generic;
 
-public interface IInteractableProvider
+namespace InteractionSystem.Provider
 {
-    IEnumerable<IInteractable<TInteractionRequestInfo, TInteractionResponse>> GetInteractables<TInteractionRequestInfo, TInteractionResponse>()
-        where TInteractionResponse : IInteractionResponse;
+    public interface IInteractableProvider
+    {
+        IEnumerable<IInteractable<TInteractionRequestInfo, TInteractionResponse>> GetInteractables<TInteractionRequestInfo, TInteractionResponse>()
+            where TInteractionResponse : IInteractionResponse;
+    }
 }

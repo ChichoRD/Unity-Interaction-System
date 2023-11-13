@@ -1,5 +1,10 @@
-public interface IInteractor<in TInteractionResponse>
-    where TInteractionResponse : IInteractionResponse
+using InteractionSystem.Data;
+
+namespace InteractionSystem.Interactor
 {
-    bool TryInteract(TInteractionResponse interactionResponse);
+    public interface IInteractor<in TInteractionResponse>
+        where TInteractionResponse : IInteractionResponse
+    {
+        bool TryInteract(TInteractionResponse interactionResponse);
+    }
 }

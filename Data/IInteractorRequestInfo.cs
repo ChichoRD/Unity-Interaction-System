@@ -1,5 +1,11 @@
-﻿public interface IInteractorRequestInfo<in TInteractionResponse>
-    where TInteractionResponse : IInteractionResponse
+﻿using InteractionSystem.Interactor;
+
+namespace InteractionSystem.Data
 {
-    IInteractor<TInteractionResponse> Interactor { get; }
+
+    public interface IInteractorRequestInfo<in TInteractionResponse>
+        where TInteractionResponse : IInteractionResponse
+    {
+        IInteractor<TInteractionResponse> Interactor { get; }
+    }
 }

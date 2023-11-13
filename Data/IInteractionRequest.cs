@@ -1,4 +1,7 @@
-public interface IInteractionRequest<out TRequestInfo>
+namespace InteractionSystem.Data
 {
-    TRequestInfo RequestInfo { get; }
+    public interface IInteractionRequest<out TRequestInfo>
+    {
+        TRequestInfo RequestInfo { get; }
+    }
 }

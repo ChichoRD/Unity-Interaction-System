@@ -1,7 +1,13 @@
-﻿using UnityEngine;
+﻿using InteractionSystem.Data;
+using InteractionSystem.Interactable;
+using InteractionSystem.Interactor;
+using UnityEngine;
 
-public class InteractionHandler : MonoBehaviour, IInteractionHandler
+namespace InteractionSystem.Handler
 {
-    public void HandleInteraction<TInteractionRequestInfo, TInteractionResponse>(IInteractor<TInteractionResponse> interactor, IInteractable<TInteractionRequestInfo, TInteractionResponse> interactable, in IInteractionRequest<TInteractionRequestInfo> request)
-        where TInteractionResponse : IInteractionResponse => interactor.TryInteract(interactable.TryInteract(request));
+    public class InteractionHandler : MonoBehaviour, IInteractionHandler
+    {
+        public void HandleInteraction<TInteractionRequestInfo, TInteractionResponse>(IInteractor<TInteractionResponse> interactor, IInteractable<TInteractionRequestInfo, TInteractionResponse> interactable, in IInteractionRequest<TInteractionRequestInfo> request)
+            where TInteractionResponse : IInteractionResponse => interactor.TryInteract(interactable.TryInteract(request));
+    }
 }

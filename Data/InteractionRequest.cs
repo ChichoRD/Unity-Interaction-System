@@ -1,9 +1,12 @@
-﻿public readonly struct InteractionRequest<TRequestInfo> : IInteractionRequest<TRequestInfo>
+﻿namespace InteractionSystem.Data
 {
-    public TRequestInfo RequestInfo { get; }
-
-    public InteractionRequest(TRequestInfo requestInfo)
+    public readonly struct InteractionRequest<TRequestInfo> : IInteractionRequest<TRequestInfo>
     {
-        RequestInfo = requestInfo;
+        public TRequestInfo RequestInfo { get; }
+
+        public InteractionRequest(TRequestInfo requestInfo)
+        {
+            RequestInfo = requestInfo;
+        }
     }
 }

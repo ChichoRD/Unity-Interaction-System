@@ -1,20 +1,25 @@
-public readonly struct InteractorInteractionRequest<TInteractionResponse> : IInteractionRequest<IInteractorRequestInfo<TInteractionResponse>>
-    where TInteractionResponse : IInteractionResponse
+using InteractionSystem.Interactor;
+
+namespace InteractionSystem.Data
 {
-    public IInteractorRequestInfo<TInteractionResponse> RequestInfo { get; }
-
-    public InteractorInteractionRequest(IInteractor<TInteractionResponse> interactor)
+    public readonly struct InteractorInteractionRequest<TInteractionResponse> : IInteractionRequest<IInteractorRequestInfo<TInteractionResponse>>
+        where TInteractionResponse : IInteractionResponse
     {
-        RequestInfo = new InteractorInfo(interactor);
-    }
+        public IInteractorRequestInfo<TInteractionResponse> RequestInfo { get; }
 
-    private readonly struct InteractorInfo : IInteractorRequestInfo<TInteractionResponse>
-    {
-        public IInteractor<TInteractionResponse> Interactor { get; }
-
-        public InteractorInfo(IInteractor<TInteractionResponse> interactor)
+        public InteractorInteractionRequest(IInteractor<TInteractionResponse> interactor)
         {
-            Interactor = interactor;
+            RequestInfo = new InteractorInfo(interactor);
+        }
+
+        private readonly struct InteractorInfo : IInteractorRequestInfo<TInteractionResponse>
+        {
+            public IInteractor<TInteractionResponse> Interactor { get; }
+
+            public InteractorInfo(IInteractor<TInteractionResponse> interactor)
+            {
+                Interactor = interactor;
+            }
         }
     }
 }

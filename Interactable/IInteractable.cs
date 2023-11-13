@@ -1,13 +1,10 @@
-public interface IInteractable<in TInteractionRequestInfo, out TInteractionResponse>
-    where TInteractionResponse : IInteractionResponse
-{
-    TInteractionResponse TryInteract(IInteractionRequest<TInteractionRequestInfo> interactionRequest);
-}
+using InteractionSystem.Data;
 
-public interface IResponseOnlyInteractable<out TInteractionResponse> : IInteractable<object, TInteractionResponse>
-    where TInteractionResponse : IInteractionResponse
+namespace InteractionSystem.Interactable
 {
-    TInteractionResponse IInteractable<object, TInteractionResponse>.TryInteract(IInteractionRequest<object> interactionRequest) =>
-        TryInteract();
-    TInteractionResponse TryInteract();
+    public interface IInteractable<in TInteractionRequestInfo, out TInteractionResponse>
+        where TInteractionResponse : IInteractionResponse
+    {
+        TInteractionResponse TryInteract(IInteractionRequest<TInteractionRequestInfo> interactionRequest);
+    }
 }
