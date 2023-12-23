@@ -1,4 +1,4 @@
-﻿namespace InteractionSystem.Data
+﻿namespace InteractionSystem.Data.Response
 {
     public interface IInteractionResponse
     {

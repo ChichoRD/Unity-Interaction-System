@@ -1,4 +1,4 @@
-namespace InteractionSystem.Data
+namespace InteractionSystem.Data.Request
 {
     public interface IInteractionRequest<out TRequestInfo>
     {

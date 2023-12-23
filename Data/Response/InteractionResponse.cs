@@ -1,6 +1,6 @@
 ﻿using InteractionSystem.Interactable;
 
-namespace InteractionSystem.Data
+namespace InteractionSystem.Data.Response
 {
     public readonly struct InteractionResponse : IInteractionResponse
     {
@@ -18,8 +18,8 @@ namespace InteractionSystem.Data
         where TInteractionResponse : IInteractionResponse
     {
         public IInteractable<TInteractionRequestInfo, TInteractionResponse> Interactable { get; }
-        public bool Success => Response.Success;
         public TInteractionResponse Response { get; }
+        public bool Success => Response.Success;
 
         public InteractionResponse(IInteractable<TInteractionRequestInfo, TInteractionResponse> interactable, TInteractionResponse response)
         {

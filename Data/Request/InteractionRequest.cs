@@ -1,7 +1,7 @@
-﻿
+﻿using InteractionSystem.Data.Response;
 using InteractionSystem.Interactor;
 
-namespace InteractionSystem.Data
+namespace InteractionSystem.Data.Request
 {
     public readonly struct InteractionRequest<TRequestInfo> : IInteractionRequest<TRequestInfo>
     {
@@ -15,7 +15,7 @@ namespace InteractionSystem.Data
 
     public readonly struct InteractionRequest<TRequestInfo, TInteractor, TInteractionResponse> :
         IInteractionRequest<TRequestInfo>,
-        IInteractorRequest<TInteractor, TInteractionResponse>
+        IInteractorRequest<TRequestInfo, TInteractor, TInteractionResponse>
         where TInteractionResponse : IInteractionResponse
         where TInteractor : IInteractor<TInteractionResponse>
     {

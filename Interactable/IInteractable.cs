@@ -1,4 +1,5 @@
-using InteractionSystem.Data;
+using InteractionSystem.Data.Request;
+using InteractionSystem.Data.Response;
 
 namespace InteractionSystem.Interactable
 {

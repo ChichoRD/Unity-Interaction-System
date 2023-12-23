@@ -1,16 +1,16 @@
-﻿using InteractionSystem.Data;
+﻿using InteractionSystem.Data.Request;
+using InteractionSystem.Data.Response;
 using InteractionSystem.Interactor;
-using System;
 using System.Collections.Generic;
 
-namespace InteractionSystem.Handler
+namespace InteractionSystem.Handler.History
 {
     public interface IInteractionHistoryService<TInteractionRequestInfo, TInteractionResponse>
         where TInteractionResponse : IInteractionResponse
     {
         IReadOnlyCollection<
             KeyValuePair<
-                IInteractorRequest<IInteractor<TInteractionResponse>, TInteractionResponse>,
+                IInteractorRequest<TInteractionRequestInfo, IInteractor<TInteractionResponse>, TInteractionResponse>,
                 IList<IInteractableResponse<TInteractionRequestInfo, TInteractionResponse>>>>
             InteractionHistory { get; }
     }
