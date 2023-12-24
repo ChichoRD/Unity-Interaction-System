@@ -13,5 +13,8 @@ namespace InteractionSystem.Provider
 
         public static IEnumerable<IRequestOnlyInteractable<TInteractionRequestInfo>> GetRequestOnlyInteractables<TInteractionRequestInfo>(this IInteractableProvider provider) =>
             provider.GetInteractables<TInteractionRequestInfo, IInteractionResponse>().OfType<IRequestOnlyInteractable<TInteractionRequestInfo>>();
+
+        public static IEnumerable<IAgnosticInteractable> GetAgnosticInteractables(this IInteractableProvider provider) =>
+            provider.GetInteractables<object, IInteractionResponse>().OfType<IAgnosticInteractable>();
     }
 }
